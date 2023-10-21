@@ -1,11 +1,15 @@
-const isPrime = (num) => {
-  for (i = 1; i <= num; i++) {
-    if (num % 1 === 0 && num % num === 0) {
-      return true;
-    } else {
+const isPrime = (number) => {
+  if (number < 2) {
+    return false;
+  }
+
+  for (let i = 2; i <= number / 2; i += 1) {
+    if (number % i === 0) {
       return false;
     }
   }
+
+  return true;
 };
 
 
