@@ -11,6 +11,8 @@ const getNumberExplanation = (number) => {
   }
 };
 
+
+
 console.log(getNumberExplanation(666));
 console.log(getNumberExplanation(7));
 console.log(getNumberExplanation(42));

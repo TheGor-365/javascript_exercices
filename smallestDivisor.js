@@ -7,6 +7,8 @@ const smallestDivisor = (num) => {
   }
 }
 
+
+
 console.log(smallestDivisor(9))
 console.log(smallestDivisor(17))
 console.log(smallestDivisor(1))

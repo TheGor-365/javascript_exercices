@@ -19,4 +19,5 @@ var p = new RegExp("abc[de]", "g");
 let S = ''
 let reg3 = new RegExp("abc[de]", "g");
 S.replace(reg, "match");
+
 console.log(S);

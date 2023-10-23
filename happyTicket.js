@@ -1,16 +1,31 @@
-const isEven = (num) => return number % 2 === 0;
+const isHappyTicket = (num) => {
+  let nums = num.split('');
+  nums = nums.map((element)=> parseInt(element));
 
-const arraySum = (numbers) => {
-  parseInt(numbers)
-  sum = 0;
+  const numsHalf  = Math.ceil(nums.length / 2);
 
-  for (const number of numbers) {
-    sum += number;
-  }
-}
+  const elementsSum = (numbers) => {
+    let sum = 0;
 
-const happyTicket = (num) => {
-  if (isEven(num.length)) {
-    
-  } else {}
-}
+    for (const number of numbers) {
+      sum += number;
+    }
+    return sum;
+  };
+
+  const startNums = nums.splice(0, numsHalf);
+  let start = elementsSum(startNums);
+
+  const endNums   = nums.splice(-numsHalf);
+  let end = elementsSum(endNums);
+
+  return start === end
+};
+
+
+
+console.log(isHappyTicket('385916')); // true
+console.log(isHappyTicket('231002')); // false
+console.log(isHappyTicket('1222'));   // false
+console.log(isHappyTicket('054702')); // true
+console.log(isHappyTicket('00'));     // true
