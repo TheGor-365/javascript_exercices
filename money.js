@@ -7,33 +7,43 @@ const rates = {
   },
 };
 
+
 export default function Money(value, currency = 'usd') {
   this.value = value;
   this.currency = currency;
 }
 
+
 Money.prototype.format = function format() {
-  // bad design (pass undefined to the function), but it is js
-  return this.getValue().toLocaleString(undefined, { style: 'currency', currency: this.getCurrency() });
+  return this.getValue().toLocaleString(undefined, {
+    style: 'currency', 
+    currency: this.getCurrency()
+  }); // bad design (pass undefined to the function), but it is js
 };
+
 
 Money.prototype.getValue = function getValue() {
   return this.value;
 };
 
+
 Money.prototype.getCurrency = function getCurrency() {
   return this.currency;
 };
 
+
 Money.prototype.exchangeTo = function exchangeTo(newCurrency) {
   const currency = this.getCurrency();
   const currentValue = this.getValue();
+
   if (currency === newCurrency) {
     return new Money(currentValue, currency);
   }
+
   const newValue = currentValue * rates[currency][newCurrency];
   return new Money(newValue, newCurrency);
 };
+
 
 Money.prototype.add = function add(money) {
   const currency = this.getCurrency();

@@ -1,16 +1,16 @@
-const makeItFunny = (str, n) => {
-  let i = 0;
+const makeItFunny = (string, number) => {
+  let index = 0;
   let result = '';
 
-  while (i < str.length) {
-    const current = str[i];
+  while (index < string.length) {
+    const current = string[index];
     
-    if ((i + 1) % n === 0) {
+    if ((index + 1) % number === 0) {
       result = `${result}${current.toUpperCase()}`;
     } else {
       result = `${result}${current}`;
     }
-    i++;
+    index++;
   }
 
   return result;

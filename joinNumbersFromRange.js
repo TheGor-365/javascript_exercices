@@ -1,11 +1,14 @@
 const joinNumbersFromRange = (start, finish) => {
-  let i = start;
   let result = '';
 
-  while (i <= finish) {
-    result = `${result}${i}`;
-    i = i + 1;
+  while (start <= finish) {
+    result = `${result}${start}`;
+    start += 1;
   }
 
   return result;
 };
+
+
+
+console.log(joinNumbersFromRange(4, 90))
